@@ -1,9 +1,9 @@
 {
-  "name": "agent-crew",
+  "name": "true-agents-mafia",
   "owner": { "name": "gregszero" },
   "plugins": [
     {
-      "name": "agent-crew",
+      "name": "true-agents-mafia",
       "source": "./",
       "description": "Reproduce before/after, review-and-ship, shipped digest, team rules."
     }

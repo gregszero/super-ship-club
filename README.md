@@ -1,4 +1,4 @@
-# agent-crew
+# true-agents-mafia
 
 Skills for running a small crew of AI agents that ship real software. A dev agent proves the bug and the fix with before/after evidence, a separate reviewer checks it and ships when allowed, and the owner gets a short digest of what went out. Simple rules keep the crew quiet unless something matters.
 
@@ -15,8 +15,8 @@ flowchart LR
 
 **Claude Code**
 ```
-/plugin marketplace add gregszero/agent-crew
-/plugin install agent-crew@agent-crew
+/plugin marketplace add gregszero/true-agents-mafia
+/plugin install true-agents-mafia@true-agents-mafia
 ```
 
 **Anything else** (Cursor, other agents): copy the `skills/` folder into your agent's skills directory (e.g. `.claude/skills/` or `.cursor/skills/`).
