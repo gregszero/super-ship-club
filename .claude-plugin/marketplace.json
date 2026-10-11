@@ -1,0 +1,11 @@
+{
+  "name": "agent-crew",
+  "owner": { "name": "gregszero" },
+  "plugins": [
+    {
+      "name": "agent-crew",
+      "source": "./",
+      "description": "Reproduce before/after, review-and-ship, shipped digest, team rules."
+    }
+  ]
+}

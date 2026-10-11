@@ -1,0 +1,7 @@
+{
+  "name": "agent-crew",
+  "description": "Skills for running a small crew of AI agents that ship software: reproduce before/after, independent review, shipped digest, team rules.",
+  "version": "0.1.0",
+  "author": { "name": "gregszero" },
+  "license": "MIT"
+}
