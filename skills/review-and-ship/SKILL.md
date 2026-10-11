@@ -1,23 +1,24 @@
 ---
 name: review-and-ship
-description: Use when a PR is ready for review. A reviewer agent that did NOT write the PR checks evidence, CI, scope, and safety, then approves or requests changes, and ships only if repo policy allows.
+description: Use when a PR is ready for review. A reviewer agent that did NOT write the PR checks evidence, CI, scope, safety, and text. The reviewer approves or requests changes. The reviewer ships only if the repo policy permits it.
 ---
 
 # Review and Ship
 
-You are the reviewer. If you authored any of this PR, stop and hand off to another agent.
+You are the reviewer. If you wrote part of this PR, stop. Give the review to a different agent.
 
 ## Checklist
-1. **Evidence**: PR has Before / After / How verified. Same steps both times.
-   The After actually shows the fix. Run the repro yourself if cheap.
-2. **CI**: all required checks green. Red or pending means not ready.
-3. **Scope**: the diff matches the linked issue. Flag unrelated changes.
-4. **Secrets**: no keys, tokens, passwords, `.env` files, or personal data in diff or artifacts.
-5. **Risk**: flag anything touching migrations/data deletion, auth/permissions,
-   payments/billing, infra/deploy config, public APIs, or dependency majors.
+1. **Evidence**: The PR has Before, After, and How verified. Both use the same steps.
+   The After shows the fix. If the repro is fast, do it yourself.
+2. **CI**: All required checks are green. A red or pending check means "not ready".
+3. **Scope**: The diff agrees with the linked issue. Flag unrelated changes.
+4. **Secrets**: The diff and files contain no keys, tokens, passwords, `.env` files, or personal data.
+5. **Risk**: Flag changes to migrations or data deletion, auth or permissions,
+   payments or billing, infra or deploy config, public APIs, or major dependency versions.
+6. **Text**: The PR description follows `plain-writing`.
 
 ## Verdict
-Post one review comment:
+Write one review comment:
 
 ```markdown
 **Verdict:** approve | request changes
@@ -26,14 +27,15 @@ Post one review comment:
 - Scope: ok | <unrelated files>
 - Secrets: none found | <where>
 - Risk: none | <flagged items>
+- Text: ok | <plain-writing problems>
 <required changes, if any, as a short list>
 ```
 
 ## Ship
-- Read the repo policy (e.g. `AGENTS.md`, `CONTRIBUTING.md`, or the team's rules).
-- **Auto-ship allowed** and verdict approve and no risk flags: merge, deploy,
-  confirm the deploy is healthy (open the changed page / hit the endpoint), note it in the PR.
-- **Otherwise** (no policy, risk flagged, or policy says human): do not merge.
-  Send the human one paragraph: what changed, why, evidence link, risks, and
-  "merge?" as the single question.
-- If a deploy fails, roll back or revert first, then report.
+- Read the repo policy (for example `AGENTS.md`, `CONTRIBUTING.md`, or the team rules).
+- **Policy permits auto-ship**, the verdict is approve, and there are no risk flags: merge and deploy.
+  Make sure that the deploy is healthy (open the changed page or call the endpoint). Write the result in the PR.
+- **All other cases** (no policy, a risk flag, or the policy requires a human): do not merge.
+  Send the human one paragraph: the change, the reason, the evidence link, the risks, and
+  the single question "merge?".
+- If a deploy fails, roll back or revert first. Then report.

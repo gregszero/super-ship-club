@@ -1,16 +1,16 @@
 ---
 name: write-spec
-description: Use when a request, bug report, agent finding, analytics signal, or customer message should become work. Turns it into one deduplicated GitHub issue, with priority and labels, that a dev agent can act on without asking questions.
+description: Use when a request, bug report, agent finding, analytics signal, or customer message must become work. Make one GitHub issue with no duplicate, a priority, and labels. A dev agent must be able to do the work without questions.
 ---
 
 # Write Spec
 
-Humans and agents (PM, QA, support, ads, social) can file issues. Same rules for both.
+Humans and agents (PM, QA, support, ads, social) can file issues. The same rules apply to all.
 
-## 1. Dedupe first
-- `gh issue list --state open --search "<keywords>"`, then check recently closed ones too.
-- Already filed? Comment the new evidence on that issue instead. Don't open a new one.
-- One issue per problem. Split bundled requests.
+## 1. Find duplicates first
+- Run `gh issue list --state open --search "<keywords>"`. Then examine recently closed issues.
+- If the issue exists, add the new evidence as a comment on it. Do not open a new issue.
+- Write one issue for each problem. Split a request that has many problems.
 
 ## 2. Write the issue
 
@@ -34,20 +34,21 @@ Humans and agents (PM, QA, support, ads, social) can file issues. Same rules for
 - <what not to touch>
 ```
 
-- Unclear repro? Write what is known and label `needs-repro`. Don't invent steps.
-- Strip secrets and customer personal data. Quote messages without names or contact details.
+- Write the issue text and the acceptance criteria in STE. Use `plain-writing`.
+- If the repro is not clear, write the known facts. Add the label `needs-repro`. Do not invent steps.
+- Remove secrets and customer personal data. Quote messages without names or contact data.
 
-## 3. Priority (pick one)
-- **P0**: broken checkout/payments, data loss, outage, security.
-- **P1**: major user-facing breakage or a blocked main flow.
-- **P2**: normal bug or feature.
-- **P3**: nice to have.
+## 3. Priority (select one)
+- **P0**: checkout or payments broken, data loss, outage, security.
+- **P1**: large user-facing failure, or the main flow is blocked.
+- **P2**: usual bug or feature.
+- **P3**: optional improvement.
 
 ## 4. Labels
 - Type: `bug` | `feature` | `chore` | `content`
-- Area: `area:<name>` (e.g. `area:checkout`, `area:auth`)
+- Area: `area:<name>` (for example `area:checkout`, `area:auth`)
 - Priority: `priority:P0`..`priority:P3`
-- `agent-created` when an agent filed it
+- `agent-created` if an agent filed the issue
 
 ## 5. Create
 
@@ -56,8 +57,8 @@ gh issue create --title "<short, specific title>" --body-file spec.md \
   --label bug --label area:checkout --label priority:P1 --label agent-created
 ```
 
-Missing labels: `gh label create <name>` once.
+If a label does not exist, run `gh label create <name>` one time.
 
 ## 6. After
-- **P0**: ping the lead and the human now, with the issue link. Don't wait for the digest.
-- Others: report the link to your lead and stop. The digest picks it up.
+- **P0**: Send the issue link to the lead and the human now. Do not wait for the digest.
+- Other priorities: Send the link to your lead and stop. The digest shows the issue.

@@ -1,30 +1,30 @@
 ---
 name: reproduce-before-after
-description: Use when fixing a bug or building a feature that changes behavior. Reproduce the BEFORE state first, capture the AFTER with the same steps, and put both in the PR.
+description: Use when you fix a bug or make a feature that changes behavior. Reproduce the BEFORE state first. Record the AFTER state with the same steps. Put both in the PR.
 ---
 
 # Reproduce Before / After
 
-No evidence, no PR.
+Do not open a PR without evidence.
 
-## 1. Reproduce BEFORE touching code
-- Write exact repro steps: URL or command, inputs, account/state, expected vs actual.
-- Capture proof of the current state, in order of preference:
-  1. A failing automated test that encodes the bug or missing feature.
-  2. A screenshot or short recording (UI changes).
-  3. Command output or logs (CLI/API changes).
-- Save artifacts with clear names: `before-<slug>.png`, `before-<slug>.log`.
+## 1. Reproduce BEFORE you change code
+- Write the exact repro steps: URL or command, inputs, account and state, expected result, actual result.
+- Record evidence of the current state. Use this order of preference:
+  1. A failing automated test that shows the bug or the missing feature.
+  2. A screenshot or a short recording (for UI changes).
+  3. Command output or logs (for CLI and API changes).
+- Give the files clear names: `before-<slug>.png`, `before-<slug>.log`.
 
-**If you cannot reproduce it: stop.** Do not guess at a fix. Report what you tried,
-what you saw, and what you need (data, access, clearer steps).
+**If you cannot reproduce it, stop.** Do not guess a fix. Report the steps you did,
+the result you saw, and the item you need (data, access, or clearer steps).
 
 ## 2. Make the change
-- Keep the diff scoped to the issue. No drive-by refactors.
+- Change only the code that the issue needs. Do not refactor other code.
 
-## 3. Capture AFTER with the SAME steps
-- Re-run the identical steps, same inputs and state.
-- The failing test now passes; the screenshot/output shows the fixed behavior.
-- Save as `after-<slug>.*`. Check nothing nearby regressed.
+## 3. Record AFTER with the SAME steps
+- Do the same steps again. Use the same inputs and the same state.
+- Make sure that the failing test passes. Make sure that the screenshot or output shows the correct behavior.
+- Save the files as `after-<slug>.*`. Make sure that related behavior did not break.
 
 ## 4. Open the PR with this section
 
@@ -42,6 +42,6 @@ what you saw, and what you need (data, access, clearer steps).
 ```
 
 ## Rules
-- Before and After must use the same steps; otherwise the comparison is meaningless.
-- Never fake or stage evidence. Mark anything unverified as unverified.
-- Strip secrets, tokens, and personal data from screenshots and logs.
+- Use the same steps for Before and After. Different steps make the comparison useless.
+- Do not fake evidence. Mark all unverified items as "unverified".
+- Remove secrets, tokens, and personal data from screenshots and logs.
