@@ -1,9 +1,9 @@
 {
-  "name": "true-agents-mafia",
+  "name": "super-ship-club",
   "owner": { "name": "gregszero" },
   "plugins": [
     {
-      "name": "true-agents-mafia",
+      "name": "super-ship-club",
       "source": "./",
       "description": "Reproduce before/after, review-and-ship, shipped digest, team rules."
     }

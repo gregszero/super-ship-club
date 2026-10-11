@@ -1,4 +1,4 @@
-# true-agents-mafia
+# super-ship-club
 
 Skills for a small team of AI agents that ship real software. A dev agent records Before and After evidence for each fix. A different reviewer agent checks the work and ships it when the policy permits. The owner gets a short digest of the shipped items. Agents stay quiet unless an item is important.
 
@@ -20,8 +20,8 @@ flowchart LR
 
 **Claude Code**
 ```
-/plugin marketplace add gregszero/true-agents-mafia
-/plugin install true-agents-mafia@true-agents-mafia
+/plugin marketplace add gregszero/super-ship-club
+/plugin install super-ship-club@super-ship-club
 ```
 
 **Other agents** (Cursor and others): Copy the `skills/` folder into the skills directory of your agent (for example `.claude/skills/` or `.cursor/skills/`).
