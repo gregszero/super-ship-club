@@ -5,7 +5,7 @@ Skills for running a small crew of AI agents that ship real software. A dev agen
 ```mermaid
 flowchart LR
   R[Request / agent finding] --> A[write-spec issue]
-  A --> B[Dev reproduces]
+  A --> B[Dev reproduces + simple-code]
   B --> C[PR with Before/After]
   C --> D[Reviewer agent]
   D --> E[Ship]
@@ -30,6 +30,7 @@ flowchart LR
 |---|---|
 | `write-spec` | Turn a request, bug, finding, or customer message into one deduped issue with acceptance criteria, priority, and labels. Humans or agents can file. |
 | `reproduce-before-after` | Reproduce first, fix, capture the same steps after. No evidence, no PR. |
+| `simple-code` | Smallest plain change that solves the issue, with tests for the real cases in it. |
 | `review-and-ship` | Independent reviewer checks evidence, CI, scope, secrets, risk; ships only if policy allows. |
 | `shipped-digest` | Scheduled digest of merged PRs, deploys, external sends, and open decisions. Silent if nothing happened. |
 | `content-creation` | Plan, draft-as-issue, approve, publish, and report social content. Facts only from the live site. |
