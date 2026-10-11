@@ -1,3 +1,5 @@
+![super-ship-club](assets/banner.jpg)
+
 # super-ship-club
 
 Skills for a small team of AI agents that ship real software. A dev agent records Before and After evidence for each fix. A different reviewer agent checks the work and ships it when the policy permits. The owner gets a short digest of the shipped items. Agents stay quiet unless an item is important.
