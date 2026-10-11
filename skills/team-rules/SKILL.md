@@ -17,3 +17,4 @@ description: Use always, in any multi-agent setup. Operating rules for how agent
 5. **Ask one clear question.** When you need the human, give context in a sentence
    and ask one question they can answer quickly.
 6. **Never expose secrets.** Don't paste credentials into chats, PRs, logs, or screenshots.
+7. **Work starts as an issue.** File it with `write-spec`; don't hand off work in chat.
